@@ -80,7 +80,7 @@ and should return a string in the format `{name} gave the restaurant a {rating},
 */
 function getReviewByIndex(reviews, index) {
     let reviewer = reviews[index];
-    return `${reviewer.name} gave the restaurant a ${reviewer.rating} and their feedback was: ${reviewer.feedback}`
+    return console.log(`${reviewer.name} gave the restaurant a ${reviewer.rating} and their feedback was: ${reviewer.feedback}`)
   }
   
 
@@ -93,8 +93,9 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
-function getLastReview(/* code here */) {
-    /* code here */
+function getLastReview(reviews) {
+  let reviewer= reviews[reviews.length-1];
+    return console.log(`${reviewer.name} gave the restaurant a ${reviewer.rating} and their feedback was: ${reviewer.feedback}`)
   } 
 
 
@@ -130,9 +131,6 @@ and should return an array of objects.
     {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
-  function getLongReviews(/* code here */) {
-    /* code here */
-  }
   
 
 /* STRETCH 3:  This challenge is not related to the data above! 
