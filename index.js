@@ -6,13 +6,18 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
-function createMenuItem(name, cost, category){
-    /* Code here */
+function createMenuItem(name, price, category){
+  let newObj = {name, price, category};
+  console.log(newObj)
 }
+
+
 
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
 
-
+const chocolateChipCookie = createMenuItem("Chocolate Chip Cookie", 2, "Dessert");
+const chickenSandwich = createMenuItem("Chicken Sandwich", 10, "Lunch");
+const macAndCheese = createMenuItem("Mac and Cheese", 3.99, "Side");
 
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
 
@@ -23,6 +28,18 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
+
+
+const burger = {name: "Burger", price: 18, category: "Lunch", discount: function(string){
+  if (string === "student" || string === "teacher") {
+    this.price = this.price - (this.price * 0.25);
+    return this.price
+  } else if (string === "public")
+  this.price = this.price - (this.price * 0.10);
+    return this.price
+  }
+}
+    
 
 
 
@@ -39,12 +56,15 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 ]
 
 /* Task 3: Console.log just Julius' feedback */
-
+console.log(reviews[5].feedback)
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
+reviews.push({name: "Jimmy", rating: 5, feedback: "Highly reccommend bringing your friends here!"})
 
+/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"*/
 
-/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
+
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
@@ -59,7 +79,8 @@ and should return a string in the format `{name} gave the restaurant a {rating},
  * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
 function getReviewByIndex(reviews, index) {
-    /* code here */
+    let reviewer = reviews[index];
+    return `${reviewer.name} gave the restaurant a ${reviewer.rating} and their feedback was: ${reviewer.feedback}`
   }
   
 
